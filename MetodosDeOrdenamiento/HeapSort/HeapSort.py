@@ -4,6 +4,7 @@
 # Python program for implementation of heap Sort
 import argparse
 from math import floor
+from time import clock
 
 
 def HEAPSORT(A):
@@ -41,8 +42,8 @@ def READDATAFILE(nums):
     parser.add_argument("-f", "--file", help="Nombre del archivo a procesar.")
     args = parser.parse_args()
 
-    if args.file:
-        print("El nombre del archivo a procesar es: ", args.file)
+    #if args.file:
+        #print("El nombre del archivo a procesar es: ", args.file)
     
     file = open(args.file)
     data = file.read()
@@ -51,11 +52,13 @@ def READDATAFILE(nums):
         nums.append(int(word))
 # end READDATAFILE
 
-    
-def main():
+if __name__ == "__main__":
     nums = []
     READDATAFILE(nums)
-    HEAPSORT(nums)
 
-main()
+    t_ini = clock()
+    HEAPSORT(nums)
+    t_fin = clock()
+    
+    print(t_fin - t_ini)
 
