@@ -7,7 +7,7 @@ parser.add_argument("-l", "--length", help="Cantidad de elementos.")
 parser.add_argument("-u", "--units", help="Longitud por elemento.")
 args = parser.parse_args()
 
-with open(args.file, 'a') as file:
+with open(args.file, 'w') as file:
     for i in range(0,int(args.length)):
         n = random.randint(1, 9)
         file.write(str(n))
