@@ -14,6 +14,7 @@ def HEAPSORT(A):
         A[0],A[i-1] = A[i-1],A[0]
         heapSize = heapSize - 1
         MAXHEAPIFY(A,1,heapSize)
+    #print(A) # Sorted list.
 # end HEAPSORT
 
 def BUILDMAXHEAP(A,hS):
@@ -44,12 +45,11 @@ def READDATAFILE(nums):
 
     #if args.file:
         #print("El nombre del archivo a procesar es: ", args.file)
-    
-    file = open(args.file)
-    data = file.read()
-    
-    for word in data.split():
-        nums.append(int(word))
+
+    with open(args.file) as file:
+        data = file.read()
+        for word in data.split():
+            nums.append(int(word))
 # end READDATAFILE
 
 if __name__ == "__main__":
