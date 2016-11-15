@@ -38,27 +38,24 @@ def MAXHEAPIFY(A,i,hS):
         MAXHEAPIFY(A,largest,hS)
 # end MAX-HEAPIFY
 
-def READDATAFILE(nums):
+def ORDERDATAFILE(nums):
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", help="Nombre del archivo a procesar.")
     args = parser.parse_args()
-
-    #if args.file:
-        #print("El nombre del archivo a procesar es: ", args.file)
 
     with open(args.file) as file:
         data = file.read()
         for word in data.split():
             nums.append(int(word))
-# end READDATAFILE
-
-if __name__ == "__main__":
-    nums = []
-    READDATAFILE(nums)
 
     t_ini = clock()
     HEAPSORT(nums)
     t_fin = clock()
     
-    print(t_fin - t_ini)
+    if args.file:
+        print(args.file, (t_fin - t_ini))
+# end READDATAFILE
 
+if __name__ == "__main__":
+    nums = []
+    ORDERDATAFILE(nums)
