@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2.7.8
 # -*- coding: utf-8 -*-
 
 # Python program for implementation of heap Sort
@@ -18,7 +18,7 @@ def HEAPSORT(A):
 # end HEAPSORT
 
 def BUILDMAXHEAP(A,hS):
-    for i in range(floor(hS/2),0,-1):
+    for i in range(int(floor(hS/2)),0,-1):
         MAXHEAPIFY(A,i,hS)
 # end BUILD-MAX-HEAP
 
